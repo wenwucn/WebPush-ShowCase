@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360安全浏览器</title>
+	<script>
+	if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
+		// function defined in step 2
+		window.webkitNotifications.createNotification('icon.png', 'Notification Title', 'Notification content...');
+	} else {
+		window.webkitNotifications.requestPermission();
+	}
+	function prompt(){
+		// 创建一个简单的文字通知：
+		var notification = webkitNotifications.createNotification(
+			'img/icon.png',  // icon url - can be relative
+			'Hello!',  // notification title
+			'Pushed message here!'  // notification body text
+		);
+
+		// 显示通知
+		notification.show();
+	}
+	</script>
+</head>
+<body>
+	<button onclick="prompt()">Prompt!</button>
+</body>
+</html>

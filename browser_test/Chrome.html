@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chrome</title>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		if (Notification.permission !== "granted")
+			Notification.requestPermission();
+	});
+	function prompt(){
+		// 创建一个简单的文字通知：
+		var notification = new Notification('Hello!', {
+				icon:'img/icon.png',
+				body:'Pushed message here!'
+			}
+		);
+	}
+	</script>
+</head>
+<body>
+	<button onclick="prompt()">Prompt!</button>
+</body>
+</html>
